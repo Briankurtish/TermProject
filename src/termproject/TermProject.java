@@ -32,7 +32,7 @@ public class TermProject {
         maintenanace = new ArrayList();
         
         test_services();
-        test_customers();
+        test_customers(); 
         test_technicians();
         test_maintenance();
         
