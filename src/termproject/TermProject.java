@@ -114,6 +114,9 @@ public class TermProject {
         System.out.printf("\n List_customers()\n\n");
         list_customers();
         
+        System.out.printf("\n List_one_customer()\n\n");
+        list_one_customer(3);
+        
         retrieve_customers();
         System.out.printf("\n List_customers()\n\n");
         list_customers();
@@ -158,6 +161,9 @@ public class TermProject {
         System.out.printf("\n List_technicians()\n\n");
         list_technicians();
         
+        System.out.printf("\n List_one_technician()\n\n");
+        list_one_technician(4);
+        
         retrieve_technicians();
         System.out.printf("\n List_technicians()\n\n");
         list_technicians();
@@ -201,6 +207,9 @@ public class TermProject {
         
         System.out.printf("\n List_maintenance()\n\n");
         list_maintenance();
+        
+        System.out.printf("\n List_one_maintenance()\n\n");
+        list_one_maintenance(5);
         
         retrieve_maintenance();
         System.out.printf("\n List_maintenance()\n\n");
@@ -416,6 +425,27 @@ public class TermProject {
     }
 }
     
+    public static void list_one_customer(int customer_id) {
+        Customer cust;
+        Iterator<Customer> itr = customers.iterator();
+        System.out.printf("\n%2s %20s %15s %15s %25s %15s",
+                "Id", "Customer Name", "Car Plate", "Contact",
+                "Email", "Address");
+        draw_line(120);
+
+        while (itr.hasNext()) {
+            cust = itr.next();
+            if(customer_id==(cust.getCustomer_id())){
+                System.out.printf("\n%2d %20s %15s %15s %30s %10s",
+                cust.getCustomer_id(), cust.getCustomer_name(),
+                cust.getCar_plate(), cust.getContact(),
+                cust.getEmail(), cust.getAddress());
+            }
+        }
+        draw_line(120);
+
+    }
+    
     public static void list_customers() {
         Customer cust;
         Iterator<Customer> itr = customers.iterator();
@@ -508,6 +538,28 @@ public class TermProject {
     }
 }
     
+    public static void list_one_technician(int tech_id) {
+        Technician tech;
+        Iterator<Technician> itr = technicians.iterator();
+        System.out.printf("\n%2s %20s %15s %15s %20s %15s %15s",
+                "Id", "Tech Name", "Contact", "Address",
+                "Status", "Password", "Task No");
+        draw_line(120);
+
+        while (itr.hasNext()) {
+            tech = itr.next();
+            if(tech_id==(tech.getTech_id())){
+                System.out.printf("\n%2d %20s %15s %15s %20s %15s %10s",
+                tech.getTech_id(), tech.getTech_username(),
+                tech.getTech_contact(), tech.getTech_address(),
+                tech.getTech_status(), tech.getTech_password(), tech.getTask_number());
+            
+            }
+        }
+        draw_line(120);
+
+    }
+    
     public static void list_technicians() {
         Technician tech;
         Iterator<Technician> itr = technicians.iterator();
@@ -599,6 +651,27 @@ public class TermProject {
         itr.remove();
     }
 }
+    
+    public static void list_one_maintenance(int maint_id) {
+        Maintenance maint;
+        Iterator<Maintenance> itr = maintenanace.iterator();
+        System.out.printf("\n%2s %20s %15s %15s %20s %15s",
+                "Id", "Cust ID", "Service ID", "Tech ID",
+                "Work Status", "Date Created");
+        draw_line(130);
+
+        while (itr.hasNext()) {
+            maint = itr.next();
+            if(maint_id==(maint.getMaint_id())){
+                System.out.printf("\n%2d %20s %15s %15s %20s %15s",
+                maint.getMaint_id(), maint.getCust_id(),
+                maint.getService_id(), maint.getTech_id(),
+                maint.getWork_status(), maint.getDate_created());
+            }
+        }
+        draw_line(130);
+
+    }
     
     public static void list_maintenance() {
         Maintenance maint;
