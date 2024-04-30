@@ -71,6 +71,19 @@ public class TermProject {
         retrieve_services();
         System.out.printf("\n List_service()\n\n");
         list_services();
+        
+        
+        System.out.printf("\n Delete_all_services()\n\n");
+        delete_all_services();
+        
+        System.out.printf("\n List_service()\n\n");
+        list_services();
+        
+        retrieve_services();
+        System.out.printf("\n List_service()\n\n");
+        list_services();
+        
+        
         }
         catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Error");
@@ -97,6 +110,16 @@ public class TermProject {
         
         System.out.printf("\n Delete_customers(4)\n\n");
         delete_customer(2);
+        
+        System.out.printf("\n List_customers()\n\n");
+        list_customers();
+        
+        retrieve_customers();
+        System.out.printf("\n List_customers()\n\n");
+        list_customers();
+        
+        System.out.printf("\n Delete_all_customers()\n\n");
+        delete_all_customers();
         
         System.out.printf("\n List_customers()\n\n");
         list_customers();
@@ -138,6 +161,16 @@ public class TermProject {
         retrieve_technicians();
         System.out.printf("\n List_technicians()\n\n");
         list_technicians();
+        
+        System.out.printf("\n Delete_all_services()\n\n");
+        delete_all_technicians();
+        
+        System.out.printf("\n List_technicians()\n\n");
+        list_technicians();
+        
+        retrieve_technicians();
+        System.out.printf("\n List_technicians()\n\n");
+        list_technicians();
         }
         catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Error");
@@ -172,6 +205,17 @@ public class TermProject {
         retrieve_maintenance();
         System.out.printf("\n List_maintenance()\n\n");
         list_maintenance();
+        
+        System.out.printf("\n Delete_all_maintenance()\n\n");
+        delete_all_maintenances();
+        
+        System.out.printf("\n List_maintenance()\n\n");
+        list_maintenance();
+        
+        retrieve_maintenance();
+        System.out.printf("\n List_maintenance()\n\n");
+        list_maintenance();
+        
         }
         catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, "Error");
@@ -241,6 +285,14 @@ public class TermProject {
       }
       if (found) services.remove(serv);
       }
+    
+    public static void delete_all_services() {
+    Iterator<Service> itr = services.iterator();
+    while (itr.hasNext()) {
+        itr.next();
+        itr.remove();
+    }
+}
     
     public static void draw_line(int num) {
         String ln="";
@@ -356,6 +408,14 @@ public class TermProject {
       if (found) customers.remove(cust);
       }
     
+    public static void delete_all_customers() {
+    Iterator<Customer> itr = customers.iterator();
+    while (itr.hasNext()) {
+        itr.next();
+        itr.remove();
+    }
+}
+    
     public static void list_customers() {
         Customer cust;
         Iterator<Customer> itr = customers.iterator();
@@ -440,6 +500,14 @@ public class TermProject {
       if (found) technicians.remove(tech);
       }
     
+    public static void delete_all_technicians() {
+    Iterator<Technician> itr = technicians.iterator();
+    while (itr.hasNext()) {
+        itr.next();
+        itr.remove();
+    }
+}
+    
     public static void list_technicians() {
         Technician tech;
         Iterator<Technician> itr = technicians.iterator();
@@ -523,6 +591,14 @@ public class TermProject {
       }
       if (found) maintenanace.remove(maint);
       }
+    
+    public static void delete_all_maintenances() {
+    Iterator<Maintenance> itr = maintenanace.iterator();
+    while (itr.hasNext()) {
+        itr.next();
+        itr.remove();
+    }
+}
     
     public static void list_maintenance() {
         Maintenance maint;
