@@ -64,6 +64,10 @@ public class TermProject {
         System.out.printf("\n List_service()\n\n");
         list_services();
         
+        
+        System.out.printf("\n List_one_service()\n\n");
+        list_one_service(2);
+        
         retrieve_services();
         System.out.printf("\n List_service()\n\n");
         list_services();
@@ -243,6 +247,31 @@ public class TermProject {
         for (int i=0; i<num; i++) ln+="=";
         System.out.printf("\n"+ln);
     }
+    
+    public static void list_one_service(int service_id) {
+        Service serv;
+        Boolean found=false;
+        Iterator<Service> itr = services.iterator();
+        System.out.printf("\n%2s %20s %40s %15s %10s",
+                "Id", "Service Name", "Description", "Price",
+                "Status");
+        draw_line(100);
+
+        while (itr.hasNext()) {
+            serv = itr.next();
+            if(service_id==(serv.getService_id())){
+                found=true;
+                System.out.printf("\n%2d %20s %40s %15s %10s",
+                serv.getService_id(), serv.getService_name(),
+                serv.getService_description(), serv.getService_price(),
+                serv.getService_status());
+                break;
+            }
+        }
+        draw_line(100);
+
+    }
+    
     
     public static void list_services() {
         Service serv;
